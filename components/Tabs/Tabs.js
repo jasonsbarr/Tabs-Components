@@ -1,4 +1,12 @@
-
+/**
+ * @class TabLink
+ * @classdesc a link styled as a tab that when clicked displays its associated content in the target
+ * 
+ * @property {HTMLElement} element  HTML element of the TabLink object
+ * @property {Number} data  value of the data-tab attribute on the TabLink and its TabItem
+ * @property {HTMLElement} itemElement  the element of the TabItem connected to this TabLink
+ * @property {TabItem} tabItem  the TabItem component connected to this TabLink
+ */
 class TabLink {
   constructor(element) {
     // Assign this.element to the passed in DOM element
