@@ -8,6 +8,10 @@
  * @property {TabItem} tabItem  the TabItem component connected to this TabLink
  */
 class TabLink {
+  /**
+   * Create TabLink object
+   * @param {HTMLElement} element the HTML element used as a TabLink component
+   */
   constructor(element) {
     // Assign this.element to the passed in DOM element
     // this.element;
