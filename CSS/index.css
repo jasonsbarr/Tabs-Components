@@ -116,8 +116,8 @@
   opacity: 1;
 }
 .carousel-list {
-  height: 215px;
   list-style-type: none;
+  min-height: 215px;
   overflow: hidden;
   position: relative;
 }
