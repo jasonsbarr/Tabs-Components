@@ -41,7 +41,6 @@ class TabLink {
     const links = [...document.querySelectorAll('.tabs-link')]
       .map(link => link.classList.remove('tabs-link-selected'));
 
-
     // Add a class named "tabs-link-selected" to this link
     this.element.classList.add('tabs-link-selected');
     
