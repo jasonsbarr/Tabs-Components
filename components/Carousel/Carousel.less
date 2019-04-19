@@ -1,0 +1,63 @@
+.carousel {
+    overflow: hidden;
+    position: relative;
+
+    &-button {
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-size: 100px;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: opacity .2s;
+        z-index: 3;
+
+        &.left {
+            left: 10%;
+        }
+
+        &.right {
+            right: 10%;
+        }
+    }
+
+    &:hover &-button {
+        opacity: 1;
+    }
+
+    &-list {
+        height: 215px;
+        list-style-type: none;
+        overflow: hidden;
+        position: relative;
+    }
+
+    &-item {
+        display: block;
+        height: 100%;
+        left: -100%;
+        position: absolute;
+        top: 0;
+        transition: all .4s ease-in-out;
+        min-width: 100%;
+        z-index: -1;
+
+
+        &-active {
+            left: 0;
+            z-index: 2;
+        }
+
+        &-next {
+            left: 100%;
+        }
+    }
+
+    &-img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
