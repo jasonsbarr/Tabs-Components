@@ -16,13 +16,15 @@ class Carousel {
             .map(item => new CarouselItem(item));
         this.buttons = this.createButtons([...document.querySelectorAll('.carousel-button')]);
         this.current = this.items.findIndex(item => item.element.classList.contains('carousel-item-active'));
-        this.next = this.setNext();
+        this.setNext();
         this.setButtonEventHandlers();
     }
 
     /**
+     * Create Button components for carousel controls
      * 
      * @param {Array} elements array of HTML elements for Button components
+     * @return {Object}
      */
     createButtons(elements) {
         return {
@@ -33,11 +35,11 @@ class Carousel {
 
     setButtonEventHandlers() {
         this.buttons.left.element.addEventListener('click', () => this.showItem('next'));
-        
         this.buttons.right.element.addEventListener('click', () => this.showItem('prev'));
     }
 
     /**
+ * Show next or previous item in carousel depending on which button is clicked
  * 
  * @param {String} direction direction of CarouselItem to show on click
  */
@@ -47,8 +49,7 @@ class Carousel {
             this.items[this.next].element.classList.remove('carousel-item-next');
             this.items[this.next].element.classList.add('carousel-item-active');
             this.current = this.next;
-            this.next = this.setNext();
-            console.log(this.current, this.next);
+            this.setNext();
             this.items[this.next].element.classList.add('carousel-item-next')
         } else if (direction === 'prev') {
             this.items[this.current].element.classList.remove('carousel-item-active');
@@ -56,21 +57,27 @@ class Carousel {
             this.items[this.current].element.classList.add('carousel-item-next');
             this.current = (this.current === 0) ? this.items.length - 1 : this.current - 1;
             this.items[this.current].element.classList.add('carousel-item-active');
-            this.next = this.setNext();
+            this.setNext();
         }
     }
 
+    /**
+     * Increment current value of this.next with wraparound for items.length
+     * 
+     * @return {Number}
+     */
     setNext() {
-        return (this.current === this.items.length - 1) ? 0 : this.current + 1;
+        this.next = (this.current === this.items.length - 1) ? 0 : this.current + 1;
     }
 }
 
 /**
+ * Wrapper object for li element containing media
+ * 
  * @property {HTMLElement} element HTML element for CarouselItem
  */
 class CarouselItem {
     /**
-     * 
      * @param {HTMLElement} element HTML element for carousel item
      */
     constructor(element) {
@@ -80,6 +87,7 @@ class CarouselItem {
 
 class CarouselButton {
     /**
+     * Wrapper object for button that controls carousel active item
      * 
      * @param {HTMLElement} element HTML element that serves as carousel button
      */
@@ -89,4 +97,3 @@ class CarouselButton {
 }
 
 const carousel = new Carousel(document.querySelector('.carousel'));
-console.log(carousel);
