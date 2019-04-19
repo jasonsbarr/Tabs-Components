@@ -49,12 +49,24 @@ class TabLink {
   }
 }
 
+/**
+ * Tab Item to show/hide based on active TabLink
+ * 
+ * @property {HTMLElement} element HTML element to use for component
+ */
 class TabItem {
+  /**
+   * 
+   * @param {HTMLElement} element HTML element to set as element property
+   */
   constructor(element) {
     // Assign this.element to the passed in element
     this.element = element;
   }
 
+  /**
+   * Toggle TabItem visibility based on currently selected TabLink
+   */
   select() {
     // Select all ".tabs-item" elements from the DOM
     // const items;
