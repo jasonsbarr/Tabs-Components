@@ -7,6 +7,7 @@
 	<body>
 		<script defer="defer" src="./components/Dropdown/Dropdown.js"></script>
 		<script defer="defer" src="./components/Tabs/Tabs.js"></script>
+		<script defer="defer" src="./components/Carousel/Carousel.js"></script>
 		
 		<div class="header-container">
 			<div class="dropdown">
@@ -25,9 +26,16 @@
 				<div class="box-title">Box Title 1</div>
 				<div class="box-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus nibh, gravida nec felis quis, facilisis facilisis lectus. Nulla ac orci pretium, condimentum orci quis, accumsan nisi. Aliquam erat volutpat. Curabitur cursus mattis libero, at viverra risus hendrerit quis. Fusce imperdiet tristique tortor non tincidunt. Mauris accumsan urna nec augue feugiat porta. Proin vitae magna in ex malesuada laoreet eget a nulla. Aliquam tristique et elit at consequat. In hac habitasse platea dictumst.</div>
 			</div>
-			<div class="box">
-				<div class="box-title">Box Title 2</div>
-				<div class="box-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce risus nibh, gravida nec felis quis, facilisis facilisis lectus. Nulla ac orci pretium, condimentum orci quis, accumsan nisi. Aliquam erat volutpat. Curabitur cursus mattis libero, at viverra risus hendrerit quis. Fusce imperdiet tristique tortor non tincidunt. Mauris accumsan urna nec augue feugiat porta. Proin vitae magna in ex malesuada laoreet eget a nulla. Aliquam tristique et elit at consequat. In hac habitasse platea dictumst.</div>
+			<div class="box carousel">
+				<span class="carousel-button left">‹</span>
+				<span class="carousel-button right">›</span>
+				<ul class="carousel-list">
+					<li class="carousel-item carousel-item-active"><img src="https://picsum.photos/500/212?image=0" alt="" class="carousel-img"></li>
+					<li class="carousel-item carousel-item-next"><img src="https://picsum.photos/500/212?image=1" alt="" class="carousel-img"></li>
+					<li class="carousel-item"><img src="https://picsum.photos/500/212?image=2" alt="" class="carousel-img"></li>
+					<li class="carousel-item"><img src="https://picsum.photos/500/212?image=3" alt="" class="carousel-img"></li>
+					<li class="carousel-item"><img src="https://picsum.photos/500/212?image=4" alt="" class="carousel-img"></li>
+				</ul>
 			</div>
 		</div>
 
